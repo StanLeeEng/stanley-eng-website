@@ -1,13 +1,39 @@
 ---
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
+import Aurora from '../components/Hero.tsx';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BlurText from '../components/Intro.tsx'
 ---
 
 <Layout>
 	<Header />
-	<Hero />
+	<section class="relative min-h-screen w-full flex items-center justify-center bg-black">
+		<div class="absolute inset-0 w-full h-full">
+			<Aurora 
+				colorStops={["#7cff67", "#b19eef", "#5227ff"]}
+				blend={0.5}
+				amplitude={1.0}
+				speed={0.5}
+				client:load
+			/>
+		</div>
+		<div class="relative z-10 flex flex-col items-center">
+			<BlurText
+				text="Hi, I'm Stanley Eng"
+				delay={150}
+				animateBy="words"
+				direction="top"
+				className="text-6xl mb-8 text-white font-bold"
+				client:load
+			/>
+			<BlurText
+				text="Creating and designing full-stack applications."
+				delay={200}
+				animateBy="words"
+				direction="top"
+				className="text-2xl text-gray-300"
+				client:load
+			/>
+		</div>
+	</section>
 </Layout>
