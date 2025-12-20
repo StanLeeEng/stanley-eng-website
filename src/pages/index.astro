@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro'
 import BlurText from '../components/Intro.tsx'
 import About from '../components/About.astro'
 import Experience from '../components/Experience.tsx'
+import Project from '../components/Project.tsx'
 ---
 
 <Layout>
@@ -12,7 +13,7 @@ import Experience from '../components/Experience.tsx'
 	<section class="relative min-h-screen w-full flex items-center justify-center bg-black">
 		<div class="absolute inset-0 w-full h-full">
 			<Aurora 
-				colorStops={["#7cff67", "#b19eef", "#5227ff"]}
+				colorStops={["#030507", "#b19eef", "#613fe9"]}
 				blend={0.5}
 				amplitude={1.0}
 				speed={0.5}
@@ -21,7 +22,7 @@ import Experience from '../components/Experience.tsx'
 		</div>
 		<div class="relative z-10 flex flex-col items-center">
 			<BlurText
-				text="Hi, I'm Stanley Eng"
+				text="Hey, I'm Stanley"
 				delay={150}
 				animateBy="words"
 				direction="top"
@@ -29,7 +30,7 @@ import Experience from '../components/Experience.tsx'
 				client:load
 			/>
 			<BlurText
-				text="Creating and designing full-stack applications."
+				text="I love creating and designing full-stack applications."
 				delay={200}
 				animateBy="words"
 				direction="top"
@@ -39,7 +40,7 @@ import Experience from '../components/Experience.tsx'
 		</div>
 	</section>
 	<About />
-	<section class="min-h-screen bg-gradient-to-b from-gray-900 to-black pt-4 pb-20 px-6">
+	<section class="min-h-screen bg-gradient-to-b from-gray-900 to-black pb-20 pb-0 px-6">
 		<div class="max-w-6xl mx-auto">
 			<h2 class="text-5xl font-bold text-white mb-16 text-center">Experience</h2>
 			
@@ -64,6 +65,46 @@ import Experience from '../components/Experience.tsx'
 					client:load
 				/>
 			</div>
+		</div>
+	</section>
+	
+	<section id="projects" class="min-h-screen bg-gradient-to-b from-black to-gray-900 py-20 px-6">
+		<div class="max-w-6xl mx-auto">
+			<h2 class="text-5xl font-bold text-white mb-16 text-center">Projects</h2>
+			<Project 
+				title="Hackathon Submission Platform"
+				description="A full-stack application that streamlines project submission and judging for BeaverHacks, Oregon State University's collegiate hackathon."
+				technologies={["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Neon", "TailwindCSS"]}
+				githubUrl="https://github.com/OregonStateHackathonClub/website#"
+				liveUrl="https://judge-phi.vercel.app/2026"
+				image="hackathon-platform.png"
+				client:load
+			/>
+			<Project 
+				title="AI Voice Memory Portfolio"
+				description="An application that collects voices of loved ones utilizing the ElevenLabs API. This was built at QuackHacks, University of Oregon's hackathon."
+				technologies={["ElevenLabs API", "Next.js", "TypeScript", "PostgreSQL", "Neon", "Prisma", "TailwindCSS"]}
+				githubUrl="https://github.com/StanLeeEng/quackhacks-remnants"
+				liveUrl="https://www.youtube.com/watch?v=G6I5HPYKaW4"
+				image="remnant.png"
+				client:load
+			/>
+			<Project 
+				title="Speech-to-Text AI Note Converter"
+				description="A web app that converts audio into organized notes for the user utilizing the Google Gemini API."
+				technologies={["HTML", "CSS", "Javascript", "Express.js", "React.js", "MongoDB", "Vite", "Google Gemini API"]}
+				githubUrl="https://github.com/BGill8/beavernotes-ai-notetaking"
+				liveUrl="https://www.youtube.com/watch?v=O1jytnXywMQ&t=2s"
+				image="beavernotes.png"
+				client:load
+			/>
+			<Project 
+				title="Mafia Party Game"
+				description="A fun web app meant to replicate the reputable party game Mafia. This utilizes the Web Socket API in order to communicate between users."
+				technologies={["HTML", "CSS", "Javascript", "Websocket API"]}
+				githubUrl="https://github.com/osu-cs290-f24/final-project-the-mafia"
+				client:load
+			/>
 		</div>
 	</section>
 </Layout>
