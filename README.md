@@ -1,3 +1,3 @@
 # My Website
 
-Check out my website at stanleyeng.dev
+Check out my website [here](stanleyeng.dev)
